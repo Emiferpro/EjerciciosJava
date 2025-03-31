@@ -17,7 +17,7 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la palabra");
         String word = sc.nextLine();
-        char[] w = word.toCharArray();
+        char[] w = word.toLowerCase().toCharArray();
         for (char c : w) {
             switch (c) {
                 case 'a':
