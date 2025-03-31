@@ -1,29 +1,45 @@
-import java.util.Scanner;
+import java.util.Arrays;
+
+/// # Ordenar un Arreglo (Método Burbuja)
+///
+/// Objetivo: Aprender a ordenar datos en un arreglo usando un algoritmo de ordenamiento simple.
+///
+/// ## Pasos:
+/// 1. Crear un arreglo con números desordenados.
+/// 2. Usar un doble bucle `for` para comparar los valores y ordenarlos.
+/// 3. Intercambiar los valores cuando el orden no sea el correcto.
+/// 4. Mostrar el arreglo ordenado en pantalla.
+
 
 public class Ejercicio4 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese un número: ");
-        int limite = scanner.nextInt();
-        scanner.close();
+        public static void main(String[] args) {
+            int[] array = {5, 3, 8, 6, 2, 7, 4, 1, 1443, 45552, 25252, 0, 121, -100};
 
-        System.out.println("Números primos menores o iguales a " + limite + ":");
+            bubbleSort(array);
 
-        for (int numero = 2; numero <= limite; numero++) {
-            if (esPrimo(numero)) {
-                System.out.print(numero + " ");
+            System.out.println("Array ordenado: " + Arrays.toString(array));
+        }
+
+        public static void bubbleSort(int[] arr) {
+            int n = arr.length;
+            boolean intercambio;
+
+            for (int i = 0; i < n - 1; i++) {
+                intercambio = false;
+
+                for (int j = 0; j < n - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        intercambio = true;
+                    }
+                }
+
+                if (!intercambio) {
+                    break;
+                }
             }
         }
-    }
-    public static boolean esPrimo(int numero) {
-        if (numero <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
+
