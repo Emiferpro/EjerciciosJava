@@ -58,5 +58,6 @@ public class Ejercicio8 {
             }
         }
         System.out.println("No se encontro el numero en el array");
+        sc.close();
     }
 }

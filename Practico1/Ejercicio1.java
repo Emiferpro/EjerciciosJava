@@ -45,5 +45,6 @@ public class Ejercicio1 {
         }
         double promedio = suma / a.length;
         System.out.println("El promedio es: " + promedio);
+        sc.close();
     }
 }

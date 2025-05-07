@@ -37,6 +37,7 @@ public class Ejercicio2 {
                     break;
             }
         }
+        sc.close();
         System.out.println("Cantidad de A: " + a);
         System.out.println("Cantidad de E: " + e);
         System.out.println("Cantidad de I: " + i);
